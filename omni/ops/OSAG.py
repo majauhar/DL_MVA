@@ -12,7 +12,7 @@
 
 
 import torch.nn as nn
-from ops.esa import ESA
+from omni.ops.esa import ESA
 
 
 class OSAG(nn.Module):
@@ -30,7 +30,7 @@ class OSAG(nn.Module):
         block_script_name   = "OSA" # kwargs["block_script_name"]
         block_class_name    = "OSA_Block" # kwargs["block_class_name"]
 
-        script_name     = "ops." + block_script_name
+        script_name     = "omni.ops." + block_script_name
         package         = __import__(script_name, fromlist=True)
         block_class     = getattr(package, block_class_name)
         group_list = []

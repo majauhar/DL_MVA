@@ -16,7 +16,7 @@ from    torch import nn, einsum
 from    einops import rearrange, repeat
 from    einops.layers.torch import Rearrange, Reduce
 import  torch.nn.functional as F
-from    ops.layernorm import LayerNorm2d
+from    omni.ops.layernorm import LayerNorm2d
 # helpers
 
 def exists(val):

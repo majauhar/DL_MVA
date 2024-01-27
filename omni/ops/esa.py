@@ -13,7 +13,7 @@
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-from ops.layernorm import LayerNorm2d
+from omni.ops.layernorm import LayerNorm2d
 
 def moment(x, dim=(2, 3), k=2):
     assert len(x.size()) == 4
