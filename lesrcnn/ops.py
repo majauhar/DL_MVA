@@ -99,7 +99,7 @@ class UpsampleBlock(nn.Module):
         #     self.up3 = _UpsampleBlock(n_channels, scale=3, group=group)
         #     self.up4 = _UpsampleBlock(n_channels, scale=4, group=group)
         # else:
-        self.up =  _UpsampleBlock(n_channels, scale=2, group=1)
+        self.up =  _UpsampleBlock(n_channels, scale=3, group=1)
 
         # self.multi_scale = multi_scale
 
