@@ -32,12 +32,12 @@ class Block(nn.Module):
         
 
 class Net(nn.Module):
-    def __init__(self, **kwargs):
+    def __init__(self, scale=4, multi_scale=False):
         super(Net, self).__init__()
         
-        scale = kwargs.get("scale") #value of scale is scale. 
-        multi_scale = kwargs.get("multi_scale") # value of multi_scale is multi_scale in args.
-        group = kwargs.get("group", 1) #if valule of group isn't given, group is 1.
+        scale = scale # kwargs.get("scale") #value of scale is scale. 
+        multi_scale = multi_scale # kwargs.get("multi_scale") # value of multi_scale is multi_scale in args.
+        # group = kwargs.get("group", 1) #if valule of group isn't given, group is 1.
         kernel_size = 3 #tcw 201904091123
         kernel_size1 = 1 #tcw 201904091123
         padding1 = 0 #tcw 201904091124
