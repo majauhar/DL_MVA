@@ -32,7 +32,7 @@ class Block(nn.Module):
         
 
 class Net(nn.Module):
-    def __init__(self, scale=2, multi_scale=False):
+    def __init__(self, scale=3, multi_scale=False):
         super(Net, self).__init__()
         
         scale = scale # kwargs.get("scale") #value of scale is scale. 
