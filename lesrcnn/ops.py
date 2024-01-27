@@ -91,29 +91,28 @@ class EResidualBlock(nn.Module):
 
 class UpsampleBlock(nn.Module):
     def __init__(self, 
-                 n_channels, scale, multi_scale, 
-                 group=1):
+                 n_channels):
         super(UpsampleBlock, self).__init__()
 
-        if multi_scale:
-            self.up2 = _UpsampleBlock(n_channels, scale=2, group=group)
-            self.up3 = _UpsampleBlock(n_channels, scale=3, group=group)
-            self.up4 = _UpsampleBlock(n_channels, scale=4, group=group)
-        else:
-            self.up =  _UpsampleBlock(n_channels, scale=scale, group=group)
+        # if multi_scale:
+        #     self.up2 = _UpsampleBlock(n_channels, scale=2, group=group)
+        #     self.up3 = _UpsampleBlock(n_channels, scale=3, group=group)
+        #     self.up4 = _UpsampleBlock(n_channels, scale=4, group=group)
+        # else:
+        self.up =  _UpsampleBlock(n_channels, scale=4, group=1)
 
-        self.multi_scale = multi_scale
+        # self.multi_scale = multi_scale
 
-    def forward(self, x, scale):
-        if self.multi_scale:
-            if scale == 2:
-                return self.up2(x)
-            elif scale == 3:
-                return self.up3(x)
-            elif scale == 4:
-                return self.up4(x)
-        else:
-            return self.up(x)
+    def forward(self, x):
+        # if self.multi_scale:
+        #     if scale == 2:
+        #         return self.up2(x)
+        #     elif scale == 3:
+        #         return self.up3(x)
+        #     elif scale == 4:
+                    # return self.up4(x)
+        # else:
+        return self.up(x)
 
 
 class _UpsampleBlock(nn.Module):

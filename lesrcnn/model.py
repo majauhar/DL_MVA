@@ -78,9 +78,9 @@ class Net(nn.Module):
         self.ReLU = nn.ReLU(inplace=True)
         '''
         self.ReLU=nn.ReLU(inplace=True)
-        self.upsample = ops.UpsampleBlock(64, scale=scale, multi_scale=multi_scale,group=1)
+        self.upsample = ops.UpsampleBlock(64)
 
-    def forward(self, x, scale):
+    def forward(self, x):
         x = self.sub_mean(x)
         c0 = x
         x1 = self.conv1(x)
@@ -117,8 +117,8 @@ class Net(nn.Module):
         x17 = self.conv17(x16)
         x17_2 = x17 + x15_1 
         x17_3 = self.ReLU(x17_2)
-        temp = self.upsample(x17_3, scale=scale)
-        x1111 = self.upsample(x1_1, scale=scale) #tcw
+        temp = self.upsample(x17_3)
+        x1111 = self.upsample(x1_1) #tcw
         temp1 = x1111+temp #tcw
         temp2 = self.ReLU(temp1)
         temp3 = self.conv17_1(temp2)
