@@ -1,7 +1,7 @@
 import  torch
 import  torch.nn as nn
-from    ops.OSAG import OSAG
-from    ops.pixelshuffle import pixelshuffle_block
+from    omni.ops.OSAG import OSAG
+from    omni.ops.pixelshuffle import pixelshuffle_block
 import  torch.nn.functional as F
 
         
