@@ -1,7 +1,6 @@
 import math
 import torch.nn as nn
 
-
 class CA_layer(nn.Module):
     def __init__(self, channel, reduction=16):
         super(CA_layer, self).__init__()
