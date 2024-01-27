@@ -16,7 +16,6 @@ import torch.nn as nn
 from ops.esa import ESA
 
 
-
 class OSAG(nn.Module):
     def __init__(self, channel_num=64, bias = True, block_num=4,**kwargs):
         super(OSAG, self).__init__()
