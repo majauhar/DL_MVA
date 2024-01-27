@@ -10,7 +10,7 @@ class OmniSR(nn.Module):
         super(OmniSR, self).__init__()
 
         res_num     = 5 # kwargs["res_num"]
-        up_scale    = 4 # kwargs["upsampling"]
+        up_scale    = 3 # kwargs["upsampling"]
         bias        = True # kwargs["bias"]
 
         residual_layer  = []
